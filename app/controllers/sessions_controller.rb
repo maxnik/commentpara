@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = t('session.created')
-      redirect_back_or_default user_url(current_user.id)
+      redirect_back_or_default '/'
     else
       render :action => 'new'
     end
@@ -19,6 +19,6 @@ class SessionsController < ApplicationController
   def destroy
     current_user_session.destroy
     flash[:notice] = t('session.destroyed')
-    redirect_back_or_default login_url
+    redirect_back_or_default '/'
   end
 end

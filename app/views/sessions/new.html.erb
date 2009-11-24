@@ -1,19 +1,15 @@
-<h1><%= t('session.new_heading') %></h1>
-
 <% custom_form_for @user_session, :url => session_url do |f| %>
-
-  <% if flash[:notice] %>
-    <span class="notice"><%= flash[:notice] %></span>
-  <% end %>
 
   <% errors_on_base = @user_session.errors.on(:base) %>
   <% if errors_on_base %>
     <p class="error"><%= errors_on_base %></p>
   <% end %>
 
-  <%= f.text_field_for :login, :label => t('user.login_label') %>
-  <%= f.password_field_for :password, :label => t('user.password_label') %>
+  <%= f.text_field_for :email %>
+  <%= f.password_field_for :password %>
+  <div>
+    <%= f.check_box :remember_me %>
+    <%= f.label :remember_me, t('activerecord.attributes.user_session.remember_me') %>
+  </div>
   <%= submit_tag t('session.new_button') %>
 <% end %>
-
-<%= link_to(t('session.forget_credintals'), forget_users_url) %>

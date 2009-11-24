@@ -1,0 +1,126 @@
+HTML,BODY,DIV,SPAN,APPLET,OBJECT,IFRAME,H1,H2,H3,H4,H5,H6,P,BLOCKQUOTE,PRE,A,ABBR,ACRONYM,ADDRESS,BIG,CITE,CODE,DEL,DFN,EM,FONT,IMG,INS,KBD,Q,S,SAMP,SMALL,STRIKE,STRONG,SUB,SUP,TT,VAR,HR,B,U,I,CENTER,DL,DT,DD,OL,UL,LI,FIELDSET,FORM,LABEL,LEGEND,TABLE,CAPTION,TBODY,TFOOT,THEAD,TR,TH,TD{padding:0;margin:0;border:none;outline:none;vertical-align:baseline;font-family:inherit;font-size:100%;}HTML{font-size:100.01%;}DFN,I,CITE,VAR,ADDRESS,EM{font-style:normal;}TH,B,STRONG,H1,H2,H3,H4,H5,H6{font-weight:normal;}TEXTAREA,INPUT,SELECT{font-family:inherit;font-size:1em;}BLOCKQUOTE,Q{quotes:none;}Q:before,Q:after,BLOCKQUOTE:before,BLOCKQUOTE:after{content:'';content:none;}OL,UL{list-style:none;}INS{text-decoration:none;}DEL{text-decoration:line-through;}TABLE{border-collapse:collapse;border-spacing:0;}CAPTION,TH,TD{text-align:left;}:focus{outline:none;}
+
+/* Layout ******************************************/
+#sidebar {
+  float: left;
+  width: 15em; 
+}
+
+#main {
+  margin-left: 15em;
+}
+
+#session {
+  text-align: right;
+}
+
+.all-line-long,
+.markup-area {
+  width: 40em;
+}
+.markup-area {
+  height: 20em;
+}
+
+.commentable {
+  position: relative;
+}
+a.comment-link {
+  position: absolute;
+  top: 0;
+  left: -6em;
+}
+
+a.comment-link,
+.comments-zone .pagination a,
+a.delete {
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: dashed;
+}
+
+.comments-zone form table tr td.labels {
+  vertical-align: top;
+  text-align: right;
+  font-weight: bold;
+  padding: 0 0.3em 0.3em 0;
+}
+.comments-zone form textarea {
+  height: 10em;
+}
+
+.comments li {
+  margin: 0.1em;
+  padding: 0.1em;
+}
+
+#busy {
+  margin-left: 0.2em;
+}
+
+.pagination {
+  text-align: center;
+}
+
+/* min-width and max-width crossbrowser solution */
+#layout-wrapper {
+  min-width: 900px;
+  max-width: 1100px;
+}
+.layout-min-width {
+  width: 900px;
+}
+.layout-max-width {
+  width: 1100px;
+}
+.layout,
+.layout-td {
+  border-collapse: collapse;
+  height: 100%;
+}
+.layout-center {
+  text-align: center;
+}
+.layout-td {
+  vertical-align: top;
+  text-align: left; /* turn off centering */
+}
+.layout-stopper {
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+}
+
+
+/* Fonts *******************************************/
+.custom-form .custom-field label {
+  display: block;
+}
+
+h1,
+.custom-form label {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+/* Colors*******************************************/
+a {
+  color: #00f;
+}
+
+a.comment-link,
+a.commentator-link {
+  color: #2853a1;
+}
+
+
+.error {
+  color: #f00;
+}
+
+.notice {
+  background-color: yellow;
+}
+/* Misc ********************************************/

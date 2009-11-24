@@ -1,0 +1,10 @@
+<h1><%= t(@chapter.new_record? ? 'chapter.new_heading' : 'chapter.edit_heading') %></h1>
+
+<% custom_form_for @chapter do |f| %>
+  <%= f.text_field_for :title, :class => 'all-line-long' %>
+  <%= f.text_area_for :body, :class => 'markup-area' %>
+  <%= submit_tag t(@chapter.new_record? ? 'buttons.create' : 'buttons.save') %>
+  <%= submit_tag t('buttons.preview'), :id=> 'preview' %>
+<% end %>
+
+<div id="preview-zone"><%= t('chapter.preview_default') %></div>

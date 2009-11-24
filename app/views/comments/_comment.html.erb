@@ -1,0 +1,7 @@
+<h6>
+  <%= comment_author_link(comment) %>, <%= comment.created_at.strftime('%B %d, %Y') %>
+  <% if current_user %>
+    <%= link_to(t('buttons.delete'), comment_url(comment), :class => 'delete') %>
+  <% end %>
+</h6>
+<%=h comment.body %>

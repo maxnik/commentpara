@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=uft-8" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <%= stylesheet_link_tag "style", :media => "all" %>
+  <%= javascript_include_tag 'jquery-1.3.min', 'application' %>
+  <title><%= @title ? @title : t('title') %></title>
+</head>
+<body>
+  <!--[if lte IE 6]>
+    <div class='layout layout-center'>
+    <table class='layout layout-center'><tr><td class='layout-td layout-max-width'>
+    <div class='layout-stopper layout-min-width'></div>
+  <![endif]-->
+
+  <div id="layout-wrapper">
+    <div id="sidebar">
+      <%= link_to(t('title'), '/') %>
+    </div>
+    <div id="main">
+      <p id="session">
+        <%= link_to(t('menu.comments'), comments_url) %>
+        <% if flash[:notice] %>
+          <span class="notice"><%= flash[:notice] %></span>
+        <% end %>
+        <% if current_user %>
+          <%= current_user.email %> 
+          <%= link_to(t('menu.logout'), logout_url) %>
+        <% else %>
+          <%= link_to(t('menu.login'), login_url) %>
+        <% end %>
+      </p>
+      <%= yield :layout %>
+    </div>
+  </div>
+
+  <!--[if lte IE 6]>
+    </td></tr></table>
+    </div>
+  <![endif]-->
+</body>
+</html>

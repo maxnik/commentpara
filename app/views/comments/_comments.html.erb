@@ -1,0 +1,9 @@
+<%= will_paginate @comments %>
+<ol>
+<% @comments.each do |comment| %>
+  <li id="comment-<%= comment.id %>">
+    <%= render :partial => 'comment', :object => comment %>
+  </li>
+<% end %>
+</ol>
+<%= will_paginate @comments %>

@@ -1,0 +1,15 @@
+<h1><%= link_to(@chapter.title, chapter_url(@chapter, :anchor => "c-#{@commentable_id}")) %></h1>
+
+<% if @comments.empty? %>
+  <p><%= t('comment.no_comments_long') %></p>
+<% else %>
+  <ol>
+  <% @comments.each do |comment| %>
+    <li>
+      <h6><%= comment_author_link(comment) %>, <%= comment.created_at.strftime('%B %d, %Y') %></h6>
+      <%=h comment.body %>
+    </li>
+  <% end %>
+  </ol>
+<% end %>
+

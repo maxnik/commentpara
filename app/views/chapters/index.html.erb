@@ -1,0 +1,18 @@
+<h1>Book title here</h1>
+
+<% if current_user %>
+  <%= link_to(t('chapter.new_link'), new_chapter_url) %>
+<% end %>
+
+<% if @chapters.empty? %>
+  <p><%= t('chapter.empty') %></p>
+<% else %>
+  <ul class="chapters">
+  <% @chapters.each do |chapter| %>
+    <li>
+      <%= link_to(chapter.title, chapter_url(chapter)) %>
+      <%= chapter.created_at.strftime('%B %d, %Y') %>
+    </li>
+  <% end %>
+  </ul>
+<% end%>

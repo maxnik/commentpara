@@ -1,0 +1,16 @@
+<%= yield_authenticity_token %>
+
+<h1><%= t('menu.comments') %></h1>
+
+<%= will_paginate @comments %>
+
+<ul class="comments">
+<% @comments.each do |comment| %>
+  <li id="comment-<%= comment.id %>">
+    <h5><%= link_to(comment.chapter.title, chapter_url(comment.chapter, :anchor => "c-#{comment.commentable_id}")) %></h5>
+    <%= render :partial => 'comment', :object => comment %>
+  </li>
+<% end %>
+</ul>
+
+<%= will_paginate @comments %>

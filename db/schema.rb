@@ -9,7 +9,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090922071614) do
+ActiveRecord::Schema.define(:version => 20091015091535) do
+
+  create_table "chapters", :force => true do |t|
+    t.string   "title",      :null => false
+    t.text     "body"
+    t.text     "body_html"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.string   "author",         :null => false
+    t.string   "url"
+    t.text     "body",           :null => false
+    t.integer  "chapter_id"
+    t.integer  "commentable_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",             :null => false

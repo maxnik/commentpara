@@ -1,0 +1,14 @@
+<%= yield_authenticity_token %>
+<%= javascript_include_tag 'jquery.cookie' %>
+
+<h1><%= @chapter.title %></h1>
+
+<p>
+<%= @chapter.created_at.strftime('%B %d, %Y') %>
+
+<% if current_user %>
+  <%= link_to(t('chapter.edit_link'), edit_chapter_url(@chapter)) %>
+<% end %>
+</p>
+
+<div class="chapter-content"><%= @chapter.body_html %></div>

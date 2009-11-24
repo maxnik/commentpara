@@ -2,4 +2,81 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  title: Book publishing system
+
+  menu:
+    login: Log in
+    logout: Log out
+    comments: All comments
+
+  buttons:
+    create: Create
+    save: Save
+    preview: Preview
+    delete: Delete
+
+  session:
+    new_button: Log in
+    created: You logged in successfully.
+    destroyed: You logged out successfully.
+    required: Log in to access this action.
+
+  chapter:
+    empty: Book author has not added any chapters yet.
+    new_link: Create new chapter
+    new_heading: Creation of a new chapter
+    edit_link: Edit this chapter
+    edit_heading: Edit chapter    
+    preview_default: Here you will see results of transformation after preview.
+
+  comment:
+    no_comments: No comments
+    one: 1 comment
+    other: '{{count}} comments'
+    author: Your name
+    url: Your url
+    body: Comment
+    remember_you: Remember you?
+    create_button: Submit Comment
+    deleted: Comment was deleted.
+    no_comments_long: Readers haven't commented this paragraph yet.
+
+  activerecord:
+    attributes:
+      user_session:
+        email: Email
+        password: Password
+        remember_me: Remember you
+      chapter:
+        title: Title
+        body: Markdown
+    errors:
+      models:
+        chapter:
+          attributes:
+            title:
+              blank: Enter title for a new chapter.
+              too_long: Title can be at most 255 characters long.
+        comment:
+          attributes:
+            author:
+              blank: Enter your name, please.
+              too_long: Your name can be at most 255 characters long.
+            url:
+              too_long: Your url can be at most 255 characters long.
+            body:
+              blank: Enter your comment, please.
+              too_long: Your comment can be at most 2000 characters long.
+
+  authlogic:
+    error_messages:
+      no_authentication_details: You did not provide email and password.
+      login_not_found: Email is wrong.
+      password_blank: Enter your password, please.
+      password_invalid: Password is wrong.
+      consecutive_failed_logins_limit_exceeded: Consecutive failed logins limit exceeded.
+      not_active: Your account is not active.
+
+  pagination:
+    prev: Previuos
+    next: Next
