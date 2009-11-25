@@ -7,6 +7,11 @@ class SessionsController < ApplicationController
   end
 
   def create
+    if User.count == 0
+      User.new(:email => params[:user_session][:email],
+               :password => params[:user_session][:password],
+               :password_confirmation => params[:user_session][:password]).save!
+    end
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = t('session.created')

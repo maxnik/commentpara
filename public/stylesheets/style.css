@@ -42,8 +42,10 @@ a.delete {
 .comments-zone form table tr td.labels {
   vertical-align: top;
   text-align: right;
-  font-weight: bold;
   padding: 0 0.3em 0.3em 0;
+}
+.comments-zone .comment-form label {
+  font-weight: bold;
 }
 .comments-zone form textarea {
   height: 10em;

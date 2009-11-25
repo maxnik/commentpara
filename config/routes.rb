@@ -16,5 +16,8 @@ ActionController::Routing::Routes.draw do |map|
   end
   map.resources :comments, :only => [:index, :destroy]
 
-  map.preview '/preview', :controller => 'service', :action => 'preview'
+  map.with_options :controller => 'service' do |service|
+    service.preview '/preview', :action => 'preview'
+    service.sitemap '/sitemap.xml', :action => 'sitemap'
+  end
 end

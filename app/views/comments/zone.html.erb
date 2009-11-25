@@ -3,7 +3,7 @@
 </div>
 
 <% form_for :comment, :url => create_comment_url(@chapter.id, @commentable_id) do |f| %>
-  <table>
+  <table class="comment-form">
     <tr>
       <td class="labels"><%= f.label :body, t('comment.body') %></td>
       <td>
@@ -26,12 +26,12 @@
       </td>
     </tr>
     <tr>
-      <td class="labels"><%= label_tag 'remember-you', t('comment.remember_you')%></td>
-      <td><%= check_box_tag 'remember-you', 1, true  %></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td><%= submit_tag t('comment.create_button'), :id => 'submit-comment' %></td>
+      <td class="labels">&nbsp;</td>
+      <td>
+        <%= check_box_tag 'remember-you', 1, true  %>
+        <%= label_tag 'remember-you', t('comment.remember_you')%>
+        <%= submit_tag t('comment.create_button'), :id => 'submit-comment' %>
+      </td>
     </tr>
   </table>
 <% end %>

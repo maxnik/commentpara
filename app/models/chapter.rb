@@ -14,9 +14,15 @@ class Chapter < ActiveRecord::Base
 
   def before_update
     if body_changed?
-      # get comments count for all commentables for this chapter_id
+      comments = self.comments.find(:all,
+                                    :select => 'commentable_id, COUNT(id) as comments_count',
+                                    :group => 'commentable_id')
+      comments_count = comments.inject({}) do |cc, comment| 
+        cc[comment.commentable_id] = comment.comments_count
+        cc
+      end
       self.body_html = Transformer.new(self).transform do |commentable_id|
-        0 # comments_count[commentable_id]
+        comments_count[commentable_id].to_i
       end
     end
     true
