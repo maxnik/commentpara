@@ -20,7 +20,7 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
 
-  config.gem 'binarylogic-authlogic', :lib => 'authlogic', :source => 'http://gems.github.com'
+  config.gem 'authlogic'
   config.gem 'rdiscount'
   config.gem 'will_paginate'
 
