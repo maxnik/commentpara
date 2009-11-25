@@ -8,11 +8,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :perishable_token,    :null => false      
       t.timestamps
     end
-
-    u = User.new(:email => 'maxim.nikolenko@gmail.com', 
-                 :password => 'password',
-                 :password_confirmation => 'password')
-    u.save!
   end
 
   def self.down
