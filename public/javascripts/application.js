@@ -36,7 +36,7 @@ $(document).ready(function () {
     return false;
   });
 
-  $('input#submit-comment').live('click', function () {
+  $('input.submit-comment').live('click', function () {
     var $submit_button = $(this);
     var $form = $submit_button.closest('form');
 
@@ -125,6 +125,12 @@ $(document).ready(function () {
     }
     return false;
   }).attr('rel', 'nofollow');
+		    	    
+  $('.comments-zone form').live('submit', function () {
+    var $submit_button = $(this).find('input.submit-comment');
+    $submit_button.click();
+    return false;
+  });
 });
 
 function replace_elements(elems)
