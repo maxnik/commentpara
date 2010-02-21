@@ -28,6 +28,7 @@ en:
     edit_link: Edit this chapter
     edit_heading: Edit chapter    
     preview_default: Here you will see results of transformation after preview.
+    published_on: published on
 
   comment:
     no_comments: No comments
@@ -40,6 +41,7 @@ en:
     create_button: Submit Comment
     deleted: Comment was deleted.
     no_comments_long: Readers haven't commented this paragraph yet.
+    wrote_on: wrote on 
 
   activerecord:
     attributes:

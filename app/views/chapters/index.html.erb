@@ -11,7 +11,7 @@
   <% @chapters.each do |chapter| %>
     <li>
       <%= link_to(chapter.title, chapter_url(chapter)) %>
-      <%= chapter.created_at.strftime('%B %d, %Y') %>
+      <span class="about"><%= t('chapter.published_on') %> <%= chapter.created_at.strftime('%B %d, %Y') %></span>
     </li>
   <% end %>
   </ul>

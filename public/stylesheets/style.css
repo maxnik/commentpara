@@ -1,6 +1,14 @@
 HTML,BODY,DIV,SPAN,APPLET,OBJECT,IFRAME,H1,H2,H3,H4,H5,H6,P,BLOCKQUOTE,PRE,A,ABBR,ACRONYM,ADDRESS,BIG,CITE,CODE,DEL,DFN,EM,FONT,IMG,INS,KBD,Q,S,SAMP,SMALL,STRIKE,STRONG,SUB,SUP,TT,VAR,HR,B,U,I,CENTER,DL,DT,DD,OL,UL,LI,FIELDSET,FORM,LABEL,LEGEND,TABLE,CAPTION,TBODY,TFOOT,THEAD,TR,TH,TD{padding:0;margin:0;border:none;outline:none;vertical-align:baseline;font-family:inherit;font-size:100%;}HTML{font-size:100.01%;}DFN,I,CITE,VAR,ADDRESS,EM{font-style:normal;}TH,B,STRONG,H1,H2,H3,H4,H5,H6{font-weight:normal;}TEXTAREA,INPUT,SELECT{font-family:inherit;font-size:1em;}BLOCKQUOTE,Q{quotes:none;}Q:before,Q:after,BLOCKQUOTE:before,BLOCKQUOTE:after{content:'';content:none;}OL,UL{list-style:none;}INS{text-decoration:none;}DEL{text-decoration:line-through;}TABLE{border-collapse:collapse;border-spacing:0;}CAPTION,TH,TD{text-align:left;}:focus{outline:none;}
 
 /* Layout ******************************************/
+body {
+  padding: 0.3em 1em;
+}
+
+.chapter-content p {
+  margin: 1em 0;
+}
+
 #sidebar {
   float: left;
   width: 15em; 
@@ -28,7 +36,7 @@ HTML,BODY,DIV,SPAN,APPLET,OBJECT,IFRAME,H1,H2,H3,H4,H5,H6,P,BLOCKQUOTE,PRE,A,ABB
 a.comment-link {
   position: absolute;
   top: 0;
-  left: -6em;
+  left: -7.5em;
 }
 
 a.comment-link,
@@ -39,6 +47,17 @@ a.delete {
   border-bottom-style: dashed;
 }
 
+.comments {
+  margin: 0.5em;
+}
+.comments li {
+  padding: 0.5em 0;
+  line-height: 1em;
+}
+
+.comments-zone form {
+  padding: 0.5em 0 0.5em 0.5em;
+}
 .comments-zone form table tr td.labels {
   vertical-align: top;
   text-align: right;
@@ -51,17 +70,17 @@ a.delete {
   height: 10em;
 }
 
-.comments li {
-  margin: 0.1em;
-  padding: 0.1em;
-}
-
 #busy {
   margin-left: 0.2em;
 }
 
 .pagination {
   text-align: center;
+  padding-top: 0.3em;
+}
+
+.chapters li {
+  margin: 1em 0;
 }
 
 /* min-width and max-width crossbrowser solution */
@@ -95,6 +114,11 @@ a.delete {
 
 
 /* Fonts *******************************************/
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
 .custom-form .custom-field label {
   display: block;
 }
@@ -107,16 +131,39 @@ h1,
 h1 {
   font-size: 1.5em;
 }
+
+.comments i {
+  font-style: italic;
+}
+
+.chapter-content pre code {
+  font-family: fixed;
+}
+
+.chapter-content h2,
+.chapter-content h3 {
+  font-weight: bold;
+  font-size: 1.1em;
+}
 /* Colors*******************************************/
+body {
+  color: #333;
+}
+
+.comments-zone {
+  background-color: #f2f2f2;
+}
+
 a {
   color: #00f;
 }
 
+.about,
 a.comment-link,
-a.commentator-link {
-  color: #2853a1;
+.comments h6,
+.comments h6 a.commentator-link {
+  color: #999;
 }
-
 
 .error {
   color: #f00;
@@ -125,4 +172,5 @@ a.commentator-link {
 .notice {
   background-color: yellow;
 }
+
 /* Misc ********************************************/
