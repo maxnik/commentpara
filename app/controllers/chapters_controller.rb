@@ -7,7 +7,7 @@ class ChaptersController < ApplicationController
   end
 
   def show
-    @chapter = Chapter.find(params[:id])
+    @chapter = Chapter.find(params[:id], :select => 'id, title, body_html, created_at')
     @title = @chapter.title
   end
 
